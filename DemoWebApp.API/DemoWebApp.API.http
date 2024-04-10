@@ -1,0 +1,6 @@
+@DemoWebApp.API_HostAddress = http://localhost:5043
+
+GET {{DemoWebApp.API_HostAddress}}/user/
+Accept: application/json
+
+###
