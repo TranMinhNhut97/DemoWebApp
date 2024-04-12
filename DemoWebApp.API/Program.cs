@@ -1,23 +1,26 @@
+using DemoWebApp.API;
 using DemoWebApp.Application;
-using DemoWebApp.Application.Common.Mapper;
+using DemoWebApp.Domain.Exception;
 using DemoWebApp.Infrastructure;
+using NLog;
+using NLog.Web;
+using Newtonsoft;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
+var logger = LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+builder.Logging.ClearProviders();
+builder.Host.UseNLog();
+
+builder.Services.AddWebAppApi(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddInfrastructure(builder.Configuration);
-builder.Services.AddAutoMapper(typeof(MapperProfile));
-
 var app = builder.Build();
 
-//app.UseExceptionHandler();
+app.ConfigureExceptionHandler(logger);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -25,8 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
-
+app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllerRoute(
