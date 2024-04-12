@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoWebApp.API", "DemoWebAp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoWepAppApi_Resources", "DemoWepAppApi_Resources", "{6AF8B101-8F21-4063-8AE3-0D7B127166A0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1BD5146D-870D-427D-A686-353DD78B93CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoWebApp.Application.Test", "DemoWebApp.Application.Test\DemoWebApp.Application.Test.csproj", "{6907BE90-B5C1-4F33-830C-69ADA51701F7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{A0F6B72A-A954-42AD-AC7B-A023AB4C8A71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0F6B72A-A954-42AD-AC7B-A023AB4C8A71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0F6B72A-A954-42AD-AC7B-A023AB4C8A71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6907BE90-B5C1-4F33-830C-69ADA51701F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6907BE90-B5C1-4F33-830C-69ADA51701F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6907BE90-B5C1-4F33-830C-69ADA51701F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6907BE90-B5C1-4F33-830C-69ADA51701F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{8C8FB682-51F3-42A8-9511-680FC9E26269} = {7ACBBD71-748F-4A94-AD12-9D77E640C877}
 		{8D8AA4F1-F9E1-4C2E-ABEC-00EAF472A59C} = {7ACBBD71-748F-4A94-AD12-9D77E640C877}
 		{A0F6B72A-A954-42AD-AC7B-A023AB4C8A71} = {7ACBBD71-748F-4A94-AD12-9D77E640C877}
+		{6907BE90-B5C1-4F33-830C-69ADA51701F7} = {1BD5146D-870D-427D-A686-353DD78B93CF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4121C8AE-933A-4808-8603-A36E25D8F54D}

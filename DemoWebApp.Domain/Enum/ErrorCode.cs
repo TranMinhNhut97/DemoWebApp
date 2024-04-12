@@ -4,6 +4,7 @@
     {
         EmptyData = 1000,
         GetDataFail = 1001,
-        UpdateDataFail = 1003
+        UpdateDataFail = 1003,
+        ExceptionError = 1004,
     }
 }

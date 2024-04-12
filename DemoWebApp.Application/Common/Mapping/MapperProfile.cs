@@ -2,7 +2,7 @@
 using DemoWebApp.Application.Common.Entities;
 using DemoWebApp.Domain.Entities.Mssql;
 
-namespace DemoWebApp.Application.Common.Mapper
+namespace DemoWebApp.Application.Common.Mapping
 {
     public class MapperProfile : Profile
     {
