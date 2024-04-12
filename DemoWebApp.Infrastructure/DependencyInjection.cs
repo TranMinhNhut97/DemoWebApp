@@ -1,4 +1,7 @@
-﻿using DemoWebApp.Application.Common.Interface.Infrastructure;
+﻿using DemoWebApp.Application.Common.Constant;
+using DemoWebApp.Application.Common.Interface.Identity;
+using DemoWebApp.Infrastructure.Common.Interface.Infrastructure;
+using DemoWebApp.Infrastructure.Identity;
 using DemoWebApp.Infrastructure.Persistence;
 using DemoWebApp.Infrastructure.Services;
 using Microsoft.EntityFrameworkCore;
@@ -14,14 +17,16 @@ namespace DemoWebApp.Infrastructure
             #region DbContext
             services.AddDbContext<CoffeeDbContext>(options =>
             {
-                options.UseSqlServer(configuration.GetConnectionString("SqlServer"));
+                options.UseSqlServer(configuration.GetConnectionString(Constants.CONECTIONSTRING_SQLSERVER));
             });
             #endregion
             
-            #region Register Data Service
+            #region Registerer Data Service
 
             services.AddTransient<IUserDataService, UserDataService>();
+            services.AddTransient<IIdentityService, IdentityService>();
             #endregion
+
             return services;
         }
     }

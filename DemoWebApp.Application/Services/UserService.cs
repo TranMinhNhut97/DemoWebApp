@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using DemoWebApp.Application.Common.Entities;
 using DemoWebApp.Application.Common.Interface.Application;
-using DemoWebApp.Application.Common.Interface.Infrastructure;
 using DemoWebApp.Domain.Entities.Mssql;
+using DemoWebApp.Infrastructure.Common.Interface.Infrastructure;
 
-namespace DemoWebApp.Application.Services.Identity
+namespace DemoWebApp.Application.Services
 {
     public class UserService : IUserService
     {
@@ -20,7 +20,7 @@ namespace DemoWebApp.Application.Services.Identity
 
         public async Task<List<UserModel>> GetUsersByUserId(string userId)
         {
-            List<UserEntity> userEntities = await _userDataService.GetUserByUserId(userId);
+            var userEntities = await _userDataService.GetUserByUserId(userId);
             List<UserModel> users = _mapper.Map<List<UserModel>>(userEntities);
             return users;
         }
